@@ -60,6 +60,9 @@ pod install
 
 ## Changelog
 
+#### 2.0.1
+- Bugfixes and performance improvements
+
 #### 2.0.0
 - `startAnalyzingWithSession` method has been removed
 - Added `scanFingerprint` method
