@@ -5,6 +5,7 @@ The Device Fingerprint tool collects thorough insight about the devices associat
 ## Requirements
 - iOS 9.0 or higher
 - [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for wifi_mac_address and wifi_ssid
+- [Core Location permission](https://developer.apple.com/documentation/corelocation/) for wifi_mac_address and wifi_ssid (starting from iOS 13)
 
 ## Installation
 
@@ -59,6 +60,12 @@ pod install
 ```
 
 ## Changelog
+
+#### 2.1.0
+- Bugfixes and security improvements
+
+#### 2.0.4
+- Bugfixes and performance improvements
 
 #### 2.0.1
 - Bugfixes and performance improvements
