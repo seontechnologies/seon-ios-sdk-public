@@ -61,6 +61,9 @@ pod install
 
 ## Changelog
 
+#### 2.1.1
+- Stability and compatibility improvements
+
 #### 2.1.0
 - Bugfixes and security improvements
 
