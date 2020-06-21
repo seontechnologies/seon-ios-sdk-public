@@ -54,12 +54,17 @@ pod install
 
 /* INVOCATION */
 
-// Compute and submit fingerprint
-[[SeonFingerprint sharedManager] scanFingerprint:@”[YOUR_PUBLIC_KEY]”];
+// Compute fingerprint
+NSString * sessionStr = [[SeonFingerprint sharedManager] fingerprintBase64];
 
 ```
 
 ## Changelog
+
+#### 3.0.0
+- Removed background HTTP request for data transmission, the SDK returns an encrypted, base64 encoded string to use with SEON's REST API
+- Removed public key support
+- Bugfixes and security improvements
 
 #### 2.1.1
 - Stability and compatibility improvements
