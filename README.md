@@ -61,10 +61,17 @@ NSString * sessionStr = [[SeonFingerprint sharedManager] fingerprintBase64];
 
 ## Changelog
 
+#### 3.0.1
+- iOS 14 compatibility
+- Stability and performance improvements
+
 #### 3.0.0
 - Removed background HTTP request for data transmission, the SDK returns an encrypted, base64 encoded string to use with SEON's REST API
 - Removed public key support
 - Bugfixes and security improvements
+
+#### 2.1.2
+- iOS 14 compatibility
 
 #### 2.1.1
 - Stability and compatibility improvements
