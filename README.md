@@ -4,8 +4,10 @@ The Device Fingerprint tool collects thorough insight about the devices associat
 
 ## Requirements
 - iOS 9.0 or higher
-- [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for wifi_mac_address and wifi_ssid
-- [Core Location permission](https://developer.apple.com/documentation/corelocation/) for wifi_mac_address and wifi_ssid (starting from iOS 13)
+- _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for wifi_mac_address and wifi_ssid
+- _(optional)_ [Core Location permission](https://developer.apple.com/documentation/corelocation/) for wifi_mac_address and wifi_ssid (starting from iOS 13)
+
+> __NOTE:__ If the listed permissions are not available for the application, the values collected using those permissions will be ignored. We recommend using as much permission as possible based on your use-case to provide reliable device fingerprint.
 
 ## Installation
 
