@@ -63,6 +63,9 @@ NSString * sessionStr = [[SeonFingerprint sharedManager] fingerprintBase64];
 
 ## Changelog
 
+#### 3.0.6
+- XCFramework support
+
 #### 3.0.1
 - iOS 14 compatibility
 - Stability and performance improvements
