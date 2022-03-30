@@ -51,8 +51,7 @@ pod install
 [[SeonFingerprint sharedManager] setLoggingEnabled:true]
 
 // Set session_id
-[SeonFingerprint sharedManager].sessionId = @"[CUSTOM_SESSION_ID]";
-
+[[SeonFingerprint sharedManager] setSessionId:@"[CUSTOM_SESSION_ID]"];
 
 /* INVOCATION */
 
