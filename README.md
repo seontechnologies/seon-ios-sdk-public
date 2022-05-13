@@ -35,6 +35,46 @@ pod install
 
 ## Integration
 
+#### Swift Integration
+
+###### Setup
+
+To be able to use the SDK in projects written in Swift you should add the use_frameworks    ! attribute to the Podfile:
+
+```
+use_frameworks!
+```
+After that the SDK can be imported like any other library:
+```
+@import SeonSDK
+```
+ Alternatively a bridging header file can be used importing the SDK there:
+```
+#import <SeonSDK/SeonFingerprint.h>
+```
+
+If you opt to use a bridging header, the path to the header must be set in Build Settings -> Objective-C Bridging Header
+
+###### Integration
+
+```
+/* CONFIGURATION */
+
+let seonfp = SeonFingerprint()
+
+// Enable logging
+seonfp.setLoggingEnabled(true)
+
+// Set session_id
+seonfp.sessionId = "CUSTOM_SESSION_ID"
+
+/* INVOCATION */
+
+// Compute fingerprint
+let sessionStr = seonfp.fingerprintBase64()
+```
+
+#### Objective-C Integration
 
 ```
 ...
@@ -44,8 +84,6 @@ pod install
 
 ```
 /* CONFIGURATION */
-
-[[SeonFingerprint sharedManager] 
 
 // Enable logging
 [[SeonFingerprint sharedManager] setLoggingEnabled:true]
