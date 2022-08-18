@@ -71,14 +71,17 @@ seonfp.sessionId = "CUSTOM_SESSION_ID"
 /* INVOCATION */
 
 // Compute fingerprint
-let sessionStr = seonfp.fingerprintBase64()
+seonfp.fingerprintBase64 { (seonFingerprint:String?) in
+    //set seonFingerprint as the value for the session 
+    //property of your Fraud API request.
+}
 ```
 
 #### Objective-C Integration
 
 ```
 ...
-#import <SeonSDK/SeonFingerprint.h>
+@import SeonSDK; 
 ...
 ```
 
@@ -93,12 +96,19 @@ let sessionStr = seonfp.fingerprintBase64()
 
 /* INVOCATION */
 
-// Compute fingerprint
-NSString * sessionStr = [[SeonFingerprint sharedManager] fingerprintBase64];
+// Compute fingerprint asynchronously
+ [[SeonFingerprint sharedManager] fingerprintBase64With:^(NSString *seonFingerprint) {
+        //set seonFingerprint as the value for the session 
+        //property of your Fraud API request.
+}];
 
 ```
 
 ## Changelog
+#### 4.0.0
+- Changed fingerprint method to be async, improving speed and reliability
+- device_ip fields are now available
+- Performance improvements
 
 #### 3.0.8
 - Swift integration improvements
