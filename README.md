@@ -1,6 +1,12 @@
 # Overview
+Device fingerprinting can be used to stop fraudsters from attempting to hack, break into, or spam application as well as offer detailed insights into any customer that’s coming onto your iOS application. Applying the Device Fingerprinting module Account takeovers, multiple account signups and payments can easily be avoided. 
 
-The Device Fingerprint tool collects thorough insight about the devices associated to a user. Account takeovers and multiple account signups, payments can easily be avoided by applying the Device Fingerprinting module. To implement SEON SDK for iOS, follow the steps below.
+You can integrate our device fingerprinting module directly into iOS mobile apps, by using our SDK found on GitHub. It will collect information based on the user’s software and hardware configuration.
+
+The SDK returns an encrypted, base64 encoded string to add in the session property in the Fraud API request. It isn’t permitted to access or modify the payload on the clients.
+JSON structured device details will be returned in the Fraud API response.
+
+To implement SEON SDK for iOS, follow the steps below.
 
 ## Requirements
 - iOS 9.0 or higher
@@ -32,6 +38,11 @@ Then you can use install as usual:
 ```
 pod install
 ```
+
+#### Using Swift package manager
+
+URL for the repository: https://github.com/seontechnologies/seon-ios-sdk-swift-package
+
 
 ## Integration
 
