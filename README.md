@@ -69,14 +69,14 @@ If you opt to use a bridging header, the path to the header must be set in Build
 let seonfp = SEONFingerprint()
 
 // Enable logging
-seonfp.setLoggingEnabled(true)
+seonfp.setLoggingEnabled(loggingEnabled: true)
 
 // Set session_id
 seonfp.sessionId = "CUSTOM_SESSION_ID"
 
 /* INVOCATION */
 // Compute fingerprint asynchronously
-seonfp.getFingerprintBase64 { fingerprint, error in
+seonfp.getFingerprintBase64 { seonFingerprint, error in
       if let error{
         // Handle the error
       } else{
@@ -109,7 +109,7 @@ seonfp.getFingerprintBase64 { fingerprint, error in
 /* INVOCATION */
 // Compute fingerprint asynchronously
 [[SEONFingerprint sharedManager]
-   getFingerprintBase64:^(NSString *fingerPrint, NSError *error) {
+   getFingerprintBase64:^(NSString *seonFingerprint, NSError *error) {
       if (error == nil){
         //set seonFingerprint as the value for the session 
         //property of your Fraud API request.
