@@ -128,6 +128,12 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 - #### Starting from v5 there is a change in SEON’s API Policy. From now on SEON might introduce new fields in the SDK with minor versions. We advise you to integrate in a way that addition of new fields is handled gracefully.
 
 - #### `device_hash` field is calculated differently, resulting in different values for a given device. This means these values are going to break between versions.
+- #### Minimum deployment target has been raised to iOS 11.0
+- #### SeonFingerprint class has been renamed to SEONFingerprint
+- #### fingerprintBase64With has been renamed to getFingerprintBase64 and changed to return the fingerprint asynchronously. Thread management is fully handled by the SDK internally and doesn’t require any extra effort from the integration side.
+- #### getFingerprintBase64’s completion handler now returns an NSError object which contains details about possible integration and runtime errors. For now the following errors are forwarded by the SDK:
+  - `SEONErrorInvalidSessionID`
+  - `SEONErrorFingerprintFailed`
 
 ### New features and improvements
   - Introducing screen capturing detection
