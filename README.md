@@ -5,8 +5,8 @@ To implement SEON SDK for iOS, follow the steps below.
 
 ## Requirements
 - iOS 11.0 or higher
-- _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for wifi_mac_address and wifi_ssid
-- _(optional)_ [Core Location permission](https://developer.apple.com/documentation/corelocation/) for wifi_mac_address and wifi_ssid (starting from iOS 13)
+- _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for `wifi_mac_address` and `wifi_ssid`
+- _(optional)_ [Core Location permission](https://developer.apple.com/documentation/corelocation/) for `wifi_mac_address` and `wifi_ssid` (starting from iOS 13)
 
 > __NOTE:__ If the listed permissions are not available for the application, the values collected using those permissions will be ignored. We recommend using as much permission as possible based on your use-case to provide reliable device fingerprint.
 
@@ -136,7 +136,7 @@ seonfp.getFingerprintBase64 { fingerprint, error in
   - General performance improvements
   - Improved stability of device hash
   - Improved error handling
-
+  - Added PrivacyInfo manifest
 
 ### New response fields
 
@@ -150,7 +150,7 @@ seonfp.getFingerprintBase64 { fingerprint, error in
 - `timezone_identifier` Returns the current system time zone’s geopolitical region ID. _Eg.: `Europe/Budapest`_
 
 ### Removed response fields
-
+#### The following fields are no longer collected and removed from the Fraud API response to comply with Apple’s required reason API policy:
 - `free_storage`
 - `total_storage`
 - `last_boot_time`
@@ -161,6 +161,8 @@ seonfp.getFingerprintBase64 { fingerprint, error in
 
 - Added class name prefixes to avoid collision with other frameworks
 - Fixed minor bug where fingerprint generation could cause cuts in audio playback
+- Added missing network configurations
+- Added missing devices from `device_name`'s output
 
 ### Other
 
