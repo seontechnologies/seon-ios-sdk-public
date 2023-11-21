@@ -1,5 +1,5 @@
 # Overview
-Device fingerprinting can be used to stop fraudsters from attempting to hack, break into, or spam application as well as offer detailed insights into any customer that’s coming onto your iOS application. Applying the Device Fingerprinting module Account takeovers, multiple account signups and payments can easily be avoided. 
+Device fingerprinting can be used to stop fraudsters from attempting to hack, break into, or spam application as well as offer detailed insights into any customer that’s coming onto your iOS application. Applying the Device Fingerprinting module Account takeovers, multiple account signups and payments can easily be avoided.
 
 To implement SEON SDK for iOS, follow the steps below.
 
@@ -12,7 +12,7 @@ To implement SEON SDK for iOS, follow the steps below.
 
 ## Installation
 
-The recommended approach for installing SeonSDK is via the [CocoaPods](http://cocoapods.org/)  package manager, as it provides flexible dependency management and dead simple installation. 
+The recommended approach for installing SeonSDK is via the [CocoaPods](http://cocoapods.org/)  package manager, as it provides flexible dependency management and simple installation.
 
 #### Using CocoaPods
 
@@ -80,7 +80,7 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
       if let error{
         // Handle the error
       } else{
-        //set seonFingerprint as the value for the session 
+        //set seonFingerprint as the value for the session
         //property of your Fraud API request.
       }
 }
@@ -91,7 +91,7 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 
 ```
 ...
-@import SeonSDK; 
+@import SeonSDK;
 ...
 ```
 
@@ -111,17 +111,25 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 [[SEONFingerprint sharedManager]
    getFingerprintBase64:^(NSString *seonFingerprint, NSError *error) {
       if (error == nil){
-        //set seonFingerprint as the value for the session 
+        //set seonFingerprint as the value for the session
         //property of your Fraud API request.
       } else{
-        // Handle error 
+        // Handle error
       }
   }];
 
 ```
 
 # Changelog
+## 5.1.0
+- #### Significantly improved the uniqueness and stability of the `device_hash` property. With the current change the value should persist through app reinstalls.
+>Note: This is NOT a breaking change for the `device_hash` property. The value only changes for a small subset of devices, where the `device_hash` wasn't unique previously.
 
+### Bugfixes
+- Fix `system_uptime` to correctly return the elapsed time in seconds since the last cold boot instead of the unix timestamp.
+### Other
+- Internal improvements.
+- Internal changes for upcoming features.
 ## 5.0.0
 ### Important Integration changes
 
@@ -151,7 +159,7 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 - `is_ios_app_on_mac` Flags when the host process is an iOS app running on a Mac. The value of the property is true for apps built using Mac Catalyst.
 - `is_on_call` Flags if the phone is on a call during the transaction. _High value security information which can be tied to fraud._
 - `is_screen_captured` Flags if the phone’s screen is captured during the transaction. _High value security information which can be tied to fraud._
-- `can_send_mail` Flags if the phone is set up for email sending. 
+- `can_send_mail` Flags if the phone is set up for email sending.
 - `can_send_text` Flags if the phone is set up for text sending. _Information whether the device is set up for use properly, false values for either is suspicious if the device is a phone._
 - `timezone_identifier` Returns the current system time zone’s geopolitical region ID. _Eg.: `Europe/Budapest`_
 
