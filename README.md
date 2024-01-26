@@ -121,6 +121,10 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 ```
 
 # Changelog
+## 5.1.1
+- Fix rare failure on devices with Auto Proxy configuration.
+- Fix test coverage report generation in XCode.
+- Internal improvements.
 ## 5.1.0
 - #### Significantly improved the uniqueness and stability of the `device_hash` property. With the current change the value should persist through app reinstalls.
 >Note: This is NOT a breaking change for the `device_hash` property. The value only changes for a small subset of devices, where the `device_hash` wasn't unique previously.
