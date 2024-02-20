@@ -52,7 +52,7 @@ use_frameworks!
 ```
 After that the SDK can be imported like any other library:
 ```
-@import SeonSDK
+import SeonSDK
 ```
  Alternatively a bridging header file can be used importing the SDK there:
 ```
