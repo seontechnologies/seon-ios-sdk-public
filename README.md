@@ -25,7 +25,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK'
+pod 'SeonSDK', '~> 5.1.1'
 ```
 
 Then you can use install as usual:
