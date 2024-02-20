@@ -25,7 +25,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK'
+pod 'SeonSDK', '~> 5.1.1'
 ```
 
 Then you can use install as usual:
@@ -52,7 +52,7 @@ use_frameworks!
 ```
 After that the SDK can be imported like any other library:
 ```
-@import SeonSDK
+import SeonSDK
 ```
  Alternatively a bridging header file can be used importing the SDK there:
 ```
