@@ -151,6 +151,8 @@ seonfp.setGeolocationTimeout(timeoutMs: 3000)          // The timeout in millise
 - Introduced new VPN detection feature
 - Internal performance improvements and changes for upcoming features
 - Fixed rare threading related issue
+- Added codesign signature to XCFramework binary to attest to the validitiy of the SDK
+- Fixed test coverage reports not showing up when the SDK is linked
 
 ### New response fields
 - `vpn_state` Returns VPN state.
