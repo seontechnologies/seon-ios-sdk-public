@@ -147,17 +147,12 @@ seonfp.setGeolocationTimeout(timeoutMs: 3000)          // The timeout in millise
 # Changelog
 ## 5.2.0
 - Added GeoLocation feature, the SDK now optionally can retrieve the device's location. See the documentation about how to use it.
-- Introduced new proxy detection feature
-- Introduced new VPN detection feature
 - Internal performance improvements and changes for upcoming features
 - Fixed rare threading related issue
 - Added codesign signature to XCFramework binary to attest to the validitiy of the SDK
 - Fixed test coverage reports not showing up when the SDK is linked
 
 ### New response fields
-- `vpn_state` Returns VPN state.
-- `proxy_state` Returns proxy state.
-- `proxy_address` Returns proxy server address if proxy usage was detected.
 - `device_location` Contains additional device location datapoints. Refer documentation for details. _This is currently an opt-in feature_
 - `device_ip_region` Returns region information based on IP address.
 
