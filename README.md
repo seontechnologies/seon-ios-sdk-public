@@ -25,7 +25,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.1.1'
+pod 'SeonSDK', '~> 5.2.0'
 ```
 
 Then you can use install as usual:
@@ -120,7 +120,42 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 
 ```
 
+# Geolocation Integration (Opt-in)
+**To enable SEON's geolocation feature on your account please reach out the customer success team to enable the functionality on your Admin page and your Scoring Engine!**
+
+> __Note:__ Currently even if the integration has been done correctly there won't be a **device_location** field in the Fraud API response until the feature flag has been set by our customer success team.
+
+#### Swift Integration
+```
+// Ask the user for appropriate location permission(s)
+
+seonfp.setGeolocationEnabled(geolocationEnabled: true) // Must be explicitly enabled to turn on the Geolocation feature
+seonfp.setGeolocationTimeout(timeoutMs: 3000)          // The timeout in milliseconds for the location service
+
+```
+
+#### Objective-C Integration
+```
+// Ask the user for appropriate location permission(s)
+
+[[SEONFingerprint sharedManager] setGeolocationEnabled:YES];   // Must be explicitly enabled to turn on the Geolocation feature
+[[SEONFingerprint sharedManager] setGeolocationTimeout:3000];  // The timeout in milliseconds for the location service
+
+```
+
+
 # Changelog
+## 5.2.0
+- Added GeoLocation feature, the SDK now optionally can retrieve the device's location. See the documentation about how to use it.
+- Internal performance improvements and changes for upcoming features
+- Fixed rare threading related issue
+- Added codesign signature to XCFramework binary to attest to the validitiy of the SDK
+- Fixed test coverage reports not showing up when the SDK is linked
+- Raised minimum deployment target from iOS 11.0 to iOS 12.0
+
+### New response fields
+- `device_location` Contains additional device location datapoints. Refer documentation for details. _This is currently an opt-in feature_
+
 ## 5.1.1
 - Fix rare failure on devices with Auto Proxy configuration.
 - Fix test coverage report generation in XCode.
