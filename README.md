@@ -155,7 +155,6 @@ seonfp.setGeolocationTimeout(timeoutMs: 3000)          // The timeout in millise
 
 ### New response fields
 - `device_location` Contains additional device location datapoints. Refer documentation for details. _This is currently an opt-in feature_
-- `device_ip_region` Returns region information based on IP address.
 
 ## 5.1.1
 - Fix rare failure on devices with Auto Proxy configuration.
