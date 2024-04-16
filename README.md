@@ -151,6 +151,7 @@ seonfp.setGeolocationTimeout(timeoutMs: 3000)          // The timeout in millise
 - Fixed rare threading related issue
 - Added codesign signature to XCFramework binary to attest to the validitiy of the SDK
 - Fixed test coverage reports not showing up when the SDK is linked
+- Raised minimum deployment target from iOS 11.0 to iOS 12.0
 
 ### New response fields
 - `device_location` Contains additional device location datapoints. Refer documentation for details. _This is currently an opt-in feature_
