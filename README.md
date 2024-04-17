@@ -4,7 +4,7 @@ Device fingerprinting can be used to stop fraudsters from attempting to hack, br
 To implement SEON SDK for iOS, follow the steps below.
 
 ## Requirements
-- iOS 11.0 or higher
+- iOS 12.0 or higher
 - _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for `wifi_mac_address` and `wifi_ssid`
 - _(optional)_ [Core Location permission](https://developer.apple.com/documentation/corelocation/) for `device_location`, `wifi_mac_address` and `wifi_ssid` (starting from iOS 13)
 
