@@ -25,7 +25,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.2.0'
+pod 'SeonSDK', '~> 5.3.0'
 ```
 
 Then you can use install as usual:
@@ -145,6 +145,19 @@ seonfp.setGeolocationTimeout(timeoutMs: 3000)          // The timeout in millise
 
 
 # Changelog
+## 5.3.0
+- Added VPN detection logic and the related response field:
+  - `vpn_state` Returns the vpn connection state of the device. The possible return values are:
+    - `"UNKNOWN"`
+    - `"CONNECTED"`
+    - `"NOT_CONNECTED"`
+- Added proxy detection logic and the following related response fields:
+  - `proxy_state` Returns the proxy connection state of the device. The possible return values are:
+    - `"UNKNOWN"`
+    - `"CONNECTED"`
+    - `"NOT_CONNECTED"`
+  - `proxy_address` Returns a String value of the connected proxy's host address followed by the port. The value can be null if no proxy connection has been found. Example value: `"111.11.11.11:8008"`
+  - Internal changes for upcoming features.
 ## 5.2.0
 - Added GeoLocation feature, the SDK now optionally can retrieve the device's location. See the documentation about how to use it.
 - Internal performance improvements and changes for upcoming features
