@@ -3,6 +3,20 @@ Device Intelligence helps prevent fraudsters from hacking, breaching, or spammin
 
 To implement SEON SDK for iOS, follow the steps below.
 
+## Known Issues
+If you're using Swift Package Manager with an SDK version ranging from `5.2.0`-`5.4.2` and you encounter an error related to the revision id not matching the previously recorded value, then you should delete the Swift security fingerprint cache for this library.
+
+You should delete the `seon-ios-sdk-swift-package-{commit-hash}.json` file located at:
+ `~/Library/org.swift.swiftpm/security/fingerprints`
+
+You could also delete the caches if needed:
+
+`rm -rf ~/Library/Caches/org.swift.swiftpm`
+
+Or you can delete every fingerprint (not advised):
+
+`rm -rf ~/Library/org.swift.swiftpm/security/fingerprints`
+
 ## Requirements
 - iOS 12.0 or higher
 - _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for `wifi_mac_address` and `wifi_ssid`
@@ -255,7 +269,7 @@ if (error) {
 ```
 # Changelog
 ## 5.5.0
->IMPORTANT: This version is going to introduce a new Fraud API response field named true_device_id.
+>IMPORTANT: This version is going to introduce a new Fraud API response field named `true_device_id`.
 - Compatibiity with SEON's Geofence API.
 - Improved Geolocation collection.
 - Extended the SDK's error object with Geolocation specific errors.
