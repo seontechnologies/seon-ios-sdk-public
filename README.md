@@ -255,7 +255,7 @@ if (error) {
 ```
 # Changelog
 ## 5.5.0
->IMPORTANT: This version is going to introduce a new Fraud API response field at a later date named true_device_id.
+>IMPORTANT: This version is going to introduce a new Fraud API response field named true_device_id.
 - Compatibiity with SEON's Geofence API.
 - Improved Geolocation collection.
 - Extended the SDK's error object with Geolocation specific errors.
