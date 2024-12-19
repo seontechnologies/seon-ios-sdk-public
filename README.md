@@ -137,10 +137,7 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 
 ```
 
-# Geolocation Integration (Opt-in)
-**To enable SEON's geolocation feature on your account for Fraud API requests, please reach out to the customer success team to enable the functionality on your Admin page and your Scoring Engine!**
-> __Note:__ Currently even if the integration has been done correctly there won't be a **device_location** field in the Fraud API response until the feature flag has been set by our customer success team.
-
+# Geolocation Integration
 > __Note:__ iOS SDK Version 5.5.0 or higher and the following Geolocation integration setup is required to use the Geofence API. For further information please visit https://docs.seon.io/api-reference/geofence-api
 ### Important: Collecting consent and necessary permissions from the end user for location tracking is required.
 
