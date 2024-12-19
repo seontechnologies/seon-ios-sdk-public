@@ -4,6 +4,9 @@ Device Intelligence helps prevent fraudsters from hacking, breaching, or spammin
 To implement SEON SDK for iOS, follow the steps below.
 
 ## Known Issues
+
+On v5.5.0 there's a known issue of not getting behaviour result when there's no location permission and you haven't explicitly set geolocationEnabled to false. Please update to v5.5.1 for the fixed version.
+
 If you're using Swift Package Manager with an SDK version ranging from `5.2.0`-`5.4.2` and you encounter an error related to the revision id not matching the previously recorded value, then you should delete the Swift security fingerprint cache for this library.
 
 You should delete the `seon-ios-sdk-swift-package-{commit-hash}.json` file located at:
@@ -39,7 +42,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.5.0'
+pod 'SeonSDK', '~> 5.5.1'
 ```
 
 Then you can use install as usual:
@@ -142,7 +145,7 @@ seonfp.getFingerprintBase64 { seonFingerprint, error in
 ### Important: Collecting consent and necessary permissions from the end user for location tracking is required.
 
 Use the `SEONGeolocationfig` object the customise how the geolocation is collected or just use the instance as-is for default values. The following properties are available on object:
-- `geolocationEnabled` - Explicit property to set geolocation collection. Defaults to true/YES.
+- `geolocationEnabled` - Explicit property to set geolocation collection. Defaults to false/NO.
 - `prefetchEnabled` - By setting it true the geolocation service is going to pre-fetch a valid location as soon as the `SEONFingerprint` object is created. Defaults to false/NO.
 - `maxGeolocationCacheAgeSec` - Sets the maximum allowed age of a location object in seconds. Default value is 60.
 - `geoLocationServiceTimeoutMs` - Sets the maximum time in milliseconds `getFingerprintBase64` or `stopBehaviourMonitoring` can wait for a valid location. Default value is 3000.
@@ -204,7 +207,7 @@ config.maxGeoLocationCacheAgeSec = 60; // Maximum allowed age of a location obje
 [[SEONFingerprint sharedManager] getFingerprintBase64:^(NSString *fingerPrint, NSError *error) {
   if (error != nil) {
         // Handle any errors
-    } else {
+    } else if (fingerprint) {
         // Use the received fingeprint value in your session property for your Geofence API or Fraud API request.
     }
 }];
@@ -268,6 +271,9 @@ if (error) {
 }];
 ```
 # Changelog
+## 5.5.1
+- Changed the default value for the geolocationEnabled property to false/NO.
+- Fixed a bug where there is no response received when calling stopBehaviourMonitoring if there is no granted location permission present or the geolocationEnabled property is not disabled explicitly.
 ## 5.5.0
 >IMPORTANT: This version is going to introduce a new Fraud API response field named `true_device_id`.
 - Compatibiity with SEON's Geofence API.
