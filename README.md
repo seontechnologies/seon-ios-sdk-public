@@ -42,7 +42,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.5.1'
+pod 'SeonSDK', '~> 5.5.2'
 ```
 
 Then you can use install as usual:
@@ -268,6 +268,9 @@ if (error) {
 }];
 ```
 # Changelog
+## 5.5.2
+- Fixed an audio issue occuring while using some hearing aids.
+- Minor improvements.
 ## 5.5.1
 - Changed the default value for the geolocationEnabled property to false/NO.
 - Fixed a bug where there is no response received when calling stopBehaviourMonitoring if there is no granted location permission present or the geolocationEnabled property is not disabled explicitly.
