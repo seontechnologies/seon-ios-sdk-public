@@ -83,7 +83,7 @@ If you opt to use a bridging header, the path to the header must be set in Build
 ```
 /* CONFIGURATION */
 
-let seonfp = SEONFingerprint()
+let seonfp = SEONFingerprint.sharedManager()
 
 // Enable logging
 seonfp.setLoggingEnabled(loggingEnabled: true)
