@@ -42,7 +42,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.5.3'
+pod 'SeonSDK', '~> 5.6.0'
 ```
 
 Then you can use install as usual:
@@ -268,6 +268,20 @@ if (error) {
 }];
 ```
 # Changelog
+## 5.6.0
+>**IMPORTANT**: Direct initialization of the `SEONFingerprint` class using `[[SEONFingerprint alloc] init]` or `[SEONFingerprint new]` (**Objective-C**) / `SEONFingerprint()` (**Swift**) is now explicitly disabled and will result in a **compile-time error.**
+
+>Please make sure you obtain the SDK instance only via the shared singleton accessor: `[SEONFingerprint sharedManager]` (**Objective-C**) or `SEONFingerprint.sharedManager()` (**Swift**).
+
+- Enhanced jailbreak detection.
+- Improved compromised environment detection.
+- Added gzip compression for session payloads to reduce transmission size.
+- Restrict instantiation of the `SEONFingerprint` object
+- Fixed output values for the `kernel_name` and `kernel_arch` fields.
+- Fixed a rare crash related to rapid deallocations.
+- Fixed a rare crash related to DeviceCheck framework.
+
+
 ## 5.5.3
 - Fixed timing/concurrency related crashes.
 - Fixed a bug where logging couldn't be disabled after it has been enabled in a session.
