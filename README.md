@@ -276,7 +276,7 @@ if (error) {
 - Enhanced jailbreak detection.
 - Improved compromised environment detection.
 - Added gzip compression for session payloads to reduce transmission size.
-- Restrict instantiation of the `SEONFingerprint` object
+- Restricted instantiation of the `SEONFingerprint` object.
 - Fixed output values for the `kernel_name` and `kernel_arch` fields.
 - Fixed a rare crash related to rapid deallocations.
 - Fixed a rare crash related to DeviceCheck framework.
