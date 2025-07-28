@@ -268,6 +268,13 @@ if (error) {
 }];
 ```
 # Changelog
+## 5.6.1
+- Fix crash on x86 architectures (Rosetta Simulator).
+- Fix location error propagation.
+- Fix state issue if GeolocationConfig is being set before each fingerprint call. 
+- Minor improvements for Behaviour Monitoring.
+- Minor fixes.
+
 ## 5.6.0
 >**IMPORTANT**: Direct initialization of the `SEONFingerprint` class using `[[SEONFingerprint alloc] init]` or `[SEONFingerprint new]` (**Objective-C**) / `SEONFingerprint()` (**Swift**) is now explicitly disabled and will result in a **compile-time error.**
 
