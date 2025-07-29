@@ -269,9 +269,9 @@ if (error) {
 ```
 # Changelog
 ## 5.6.1
-- Fix crash on x86 architectures (Rosetta Simulator).
-- Fix location error propagation.
-- Fix state issue if GeolocationConfig is being set before each fingerprint call. 
+- Fixed crash on x86 architectures (Rosetta Simulator).
+- Fixed location error propagation.
+- Fixed state issue if GeolocationConfig is being set before each fingerprint call. 
 - Minor improvements for Behaviour Monitoring.
 - Minor fixes.
 
