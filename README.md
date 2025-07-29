@@ -42,7 +42,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.6.0'
+pod 'SeonSDK', '~> 5.6.1'
 ```
 
 Then you can use install as usual:
@@ -205,7 +205,7 @@ config.maxGeoLocationCacheAgeSec = 60; // Maximum allowed age of a location obje
   if (error != nil) {
         // Handle any errors
     } else if (fingerprint) {
-        // Use the received fingeprint value in your session property for your Geofence API or Fraud API request.
+        // Use the received fingerprint value in your session property for your Geofence API or Fraud API request.
     }
 }];
 
@@ -221,7 +221,7 @@ The monitoring should be started with calling `startBehaviourMonitoring` whereve
 -	`"possible_automation"`: Suggests that automation tools or scripts may be controlling the device.
 -	`"possible_device_farm"`: Suggests that the device might be part of a device farm used for fraudulent activities.
 -	`"possible_vishing"`: Flags possible vishing (voice phishing) activity, where the user might be coerced into providing sensitive information.
-- **To be continously improved and extended with new signals**
+- **To be continuously improved and extended with new signals**
 
 #### Swift Integration
 ```
@@ -268,6 +268,13 @@ if (error) {
 }];
 ```
 # Changelog
+## 5.6.1
+- Fixed crash on x86 architectures (Rosetta Simulator).
+- Fixed location error propagation.
+- Fixed state issue if GeolocationConfig is being set before each fingerprint call. 
+- Minor improvements for Behaviour Monitoring.
+- Minor fixes.
+
 ## 5.6.0
 >**IMPORTANT**: Direct initialization of the `SEONFingerprint` class using `[[SEONFingerprint alloc] init]` or `[SEONFingerprint new]` (**Objective-C**) / `SEONFingerprint()` (**Swift**) is now explicitly disabled and will result in a **compile-time error.**
 
@@ -290,7 +297,7 @@ if (error) {
 - Removed deprecated logs when logging is enabled.
 - Internal changes and improvements.
 ## 5.5.2
-- Fixed an audio issue occuring while using some hearing aids.
+- Fixed an audio issue occurring while using some hearing aids.
 - Minor improvements.
 ## 5.5.1
 - Changed the default value for the geolocationEnabled property to false/NO.
@@ -350,7 +357,7 @@ if (error) {
 - Added GeoLocation feature, the SDK now optionally can retrieve the device's location. See the documentation about how to use it.
 - Internal performance improvements and changes for upcoming features
 - Fixed rare threading related issue
-- Added codesign signature to XCFramework binary to attest to the validitiy of the SDK
+- Added codesign signature to XCFramework binary to attest to the validity of the SDK
 - Fixed test coverage reports not showing up when the SDK is linked
 - Raised minimum deployment target from iOS 11.0 to iOS 12.0
 
