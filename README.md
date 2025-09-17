@@ -23,7 +23,7 @@ Or you can delete every fingerprint (not advised):
 `rm -rf ~/Library/org.swift.swiftpm/security/fingerprints`
 
 ## Requirements
-- iOS 15.6 or higher
+- iOS 15.0 or higher
 - _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for `wifi_mac_address` and `wifi_ssid`
 - _(optional)_ [Core Location permission](https://developer.apple.com/documentation/corelocation/) for `device_location`, `wifi_mac_address` and `wifi_ssid` (starting from iOS 13)
 
@@ -273,7 +273,7 @@ if (error) {
 ## 5.6.2
  >⚠️ **IMPORTANT! This version includes necessary fixes to be compliant and compatible with iOS 26!** ⚠️
 - Fixed an iOS app deployment issue ( **ITMS-91011** ) related to the arm64e architecture slice 
-- Fixed an issue related to minimum deployment target version ( **ITMS-90208** ) by raising it to 15.6 to match Apple's guidelines.
+- Fixed an issue related to minimum deployment target version ( **ITMS-90208** ) by raising it to 15.0 to match Apple's guidelines.
 
 
 ## 5.6.1
