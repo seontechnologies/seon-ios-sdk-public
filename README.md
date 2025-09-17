@@ -5,8 +5,10 @@ To implement SEON SDK for iOS, follow the steps below.
 
 ## Known Issues
 
+To be compatible with **iOS 26**, please update to at least version `5.6.2`!
+<hr>
 On v5.5.0 there's a known issue of not getting behaviour result when there's no location permission and you haven't explicitly set geolocationEnabled to false. Please update to v5.5.1 for the fixed version.
-
+<hr>
 If you're using Swift Package Manager with an SDK version ranging from `5.2.0`-`5.4.2` and you encounter an error related to the revision id not matching the previously recorded value, then you should delete the Swift security fingerprint cache for this library.
 
 You should delete the `seon-ios-sdk-swift-package-{commit-hash}.json` file located at:
@@ -21,7 +23,7 @@ Or you can delete every fingerprint (not advised):
 `rm -rf ~/Library/org.swift.swiftpm/security/fingerprints`
 
 ## Requirements
-- iOS 12.0 or higher
+- iOS 15.0 or higher
 - _(optional)_ [Access WiFi Information entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_wifi-info) for `wifi_mac_address` and `wifi_ssid`
 - _(optional)_ [Core Location permission](https://developer.apple.com/documentation/corelocation/) for `device_location`, `wifi_mac_address` and `wifi_ssid` (starting from iOS 13)
 
@@ -42,7 +44,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.6.1'
+pod 'SeonSDK', '~> 5.6.2'
 ```
 
 Then you can use install as usual:
@@ -268,6 +270,12 @@ if (error) {
 }];
 ```
 # Changelog
+## 5.6.2
+ >⚠️ **IMPORTANT! This version includes necessary fixes to be compliant and compatible with iOS 26!** ⚠️
+- Fixed an iOS app deployment issue ( **ITMS-91011** ) related to the arm64e architecture slice 
+- Fixed an issue related to minimum deployment target version ( **ITMS-90208** ) by raising it to 15.0 to match Apple's guidelines.
+
+
 ## 5.6.1
 - Fixed crash on x86 architectures (Rosetta Simulator).
 - Fixed location error propagation.
