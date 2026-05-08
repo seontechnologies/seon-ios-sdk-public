@@ -293,7 +293,8 @@ if (error) {
 
 ## 5.7.0
 
-- Added `dnsTimeoutMs` property to the `SEONFingerprint` object. You can optionally set a custom timeout with this property for the SDK's network call
+- Introduced `mobile_details` field, enriching the Fraud API response with more device data.
+- Added `dnsTimeoutMs` property to the `SEONFingerprint` object. You can optionally set a custom timeout with this property for the SDK's network call.
   > > Note: Passing 0 here effectively skips the network logic which in turn won't populate the Fraud API fields with device*ip*_ and dns*ip*_ prefixes
 - Fixed a contention bug on some busy devices where the SDK has been configured to run with Geolocation features.
 - Improved `device_name` resolution for newer devices.
