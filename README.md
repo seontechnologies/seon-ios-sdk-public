@@ -291,7 +291,7 @@ if (error) {
 
 # Changelog
 ## 5.7.1
-- Revert incorrectly raised minimum deployment target back to iOS 15.0.
+- Revert minimum deployment target back from 15.6 to iOS 15.0.
 - Fixed rare invalid geolocation states.
 - Fixed setDnsTimeoutMs interface.
 - Internal changes and improvements for upcoming features.
