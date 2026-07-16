@@ -47,7 +47,7 @@ gem install cocoapods
 To integrate SeonSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'SeonSDK', '~> 5.7.1'
+pod 'SeonSDK', '~> 5.8.0'
 ```
 
 Then you can use install as usual:
@@ -290,6 +290,10 @@ if (error) {
 ```
 
 # Changelog
+## 5.8.0
+- Introduced `system_integrity` field, visit [SEON DOCS](https://docs.seon.io/api-reference/fraud-api#ios-sdk) for further information.
+- Internal changes and improvements for upcoming features.
+
 ## 5.7.1
 - Revert minimum deployment target back from 15.6 to iOS 15.0.
 - Fixed rare invalid geolocation states.
