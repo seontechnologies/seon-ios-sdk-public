@@ -290,9 +290,12 @@ if (error) {
 ```
 
 # Changelog
-## 5.8.0
+## 5.8.1
 - Introduced `system_integrity` field, visit [SEON DOCS](https://docs.seon.io/api-reference/fraud-api#ios-sdk) for further information.
 - Internal changes and improvements for upcoming features.
+
+## 5.8.0
+> ⚠️ **IMPORTANT! This version was built against a yet unsupported iOS SDK 27. Use v5.8.1 instead.** ⚠️
 
 ## 5.7.1
 - Revert minimum deployment target back from 15.6 to iOS 15.0.
