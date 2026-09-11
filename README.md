@@ -289,7 +289,41 @@ if (error) {
 }];
 ```
 
+# App Store Privacy (Privacy Manifest)
+
+The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework. Xcode aggregates it, together with the manifests of your app and other SDKs, into your app's **Privacy Report** (Product → Archive → right-click the archive → *Generate Privacy Report*). Use that report when filling in the **App Privacy** section in App Store Connect. The manifest does **not** update your App Store privacy labels automatically; as the app developer you remain responsible for keeping them accurate.
+
+### Declared data collection
+
+| Data type | Linked to the user | Used for tracking | Purpose | Collected when |
+| --- | --- | --- | --- | --- |
+| Device ID | Yes | No | App Functionality | Always (e.g. `device_hash`, a device identifier persisted in the keychain) |
+| Other Diagnostic Data | Yes | No | App Functionality | Always |
+| Other Data Types | Yes | No | App Functionality | Always (device, OS, network, locale, accessibility and sensor signals used to compute the fingerprint) |
+| Precise Location | Yes | No | App Functionality | Only if `geolocationEnabled` is `true` and your app holds location permission with full accuracy |
+| Coarse Location | Yes | No | App Functionality | Only if `geolocationEnabled` is `true` and your app holds location permission with reduced accuracy |
+
+**Why "linked to the user":** the fingerprint returned by `getFingerprintBase64` / `stopBehaviourMonitoring` is tied to the `sessionId` you set and is submitted in your Fraud API request together with your own customer identifiers (for example `email`, `phone_number`, `user_id`). It also contains a stable device identifier. Under [Apple's definition](https://developer.apple.com/app-store/app-privacy-details/#linked-data), data associated with a user's account or device counts as linked to the user's identity. If your App Store privacy labels currently list these data types under *Data Not Linked to You*, move them to *Data Linked to You*.
+
+**Tracking:** the SDK declares `NSPrivacyTracking = false` and no tracking domains. The collected data is used solely for fraud prevention and security, which Apple explicitly excludes from its definition of tracking. The SDK does not require you to show the App Tracking Transparency prompt.
+
+### Declared required reason APIs
+
+| API category | Reason code | Used for |
+| --- | --- | --- |
+| System boot time | `35F9.1` | Computing the `system_uptime` field |
+
 # Changelog
+## 5.8.2
+> **Note:** the privacy manifest bundled with the SDK has been updated to match Apple's latest privacy policies. See the [App Store Privacy](#app-store-privacy-privacy-manifest) section for details.
+
+- Updated `PrivacyInfo.xcprivacy`:
+  - Added `Precise Location` and `Coarse Location` as collected data types. They only apply when the Geolocation feature is enabled.  If you use the Geolocation feature, check that your App Store Connect privacy labels include Precise and/or Coarse Location. See the [App Store Privacy](#app-store-privacy-privacy-manifest) section for details.
+  - Added an explicit `NSPrivacyTracking = false` declaration with an empty `NSPrivacyTrackingDomains` list.
+  - Removed the `UserDefaults` required reason API declaration, as the SDK no longer uses `NSUserDefaults`.
+- Fixed a rare crash when calling `stopBehaviourMonitoring`.
+- Minor fixes.
+
 ## 5.8.1
 - Introduced `system_integrity` field, visit [SEON DOCS](https://docs.seon.io/api-reference/fraud-api#ios-sdk) for further information.
 - Internal changes and improvements for upcoming features.
