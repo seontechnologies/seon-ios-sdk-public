@@ -322,7 +322,7 @@ The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework.
   - Added an explicit `NSPrivacyTracking = false` declaration with an empty `NSPrivacyTrackingDomains` list.
   - Removed the `UserDefaults` required reason API declaration, as the SDK no longer uses `NSUserDefaults`.
 - Fixed a rare crash when calling `stopBehaviourMonitoring`.
-- Fixed an issue where requesting a fingerprint during behaviour monitoring would produce behavior results and stop behaviour data collection. Only `stopBehaviourMonitoring` will produce behavior results. See the [Behaviour Monitoring](#behaviour-monitoring-optional) section for details.
+- Fixed an issue where requesting a fingerprint during behaviour monitoring would produce behaviour results and stop behaviour data collection. Only `stopBehaviourMonitoring` will produce behavior results. See the [Behaviour Monitoring](#behaviour-monitoring-optional) section for details.
 - Minor fixes.
 
 ## 5.8.1
