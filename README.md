@@ -311,7 +311,7 @@ The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework.
 
 | API category | Reason code | Used for |
 | --- | --- | --- |
-| System boot time | `35F9.1` | Computing the `system_uptime` field |
+| System boot time | `35F9.1` | Computing perfomance metrics |
 
 # Changelog
 ## 5.8.2
@@ -323,6 +323,7 @@ The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework.
   - Removed the `UserDefaults` required reason API declaration, as the SDK no longer uses `NSUserDefaults`.
 - Fixed a rare crash when calling `stopBehaviourMonitoring`.
 - Fixed an issue where requesting a fingerprint during behaviour monitoring would produce behaviour results and stop behaviour data collection. Only `stopBehaviourMonitoring` will produce behavior results. See the [Behaviour Monitoring](#behaviour-monitoring-optional) section for details.
+- `system_uptime` is now always `null`. The SDK no longer calls the system boot time API, to comply with Apple's privacy requirements.
 - Minor fixes.
 
 ## 5.8.1
