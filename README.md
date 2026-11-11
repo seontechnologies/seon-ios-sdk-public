@@ -314,6 +314,10 @@ The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework.
 | System boot time | `35F9.1` | Computing perfomance metrics |
 
 # Changelog
+## 5.8.3
+- Fixed a rare hang and crash in geolocation data collection.
+- Fixed a rare crash on iOS 27 caused by accessing UI state from a background thread.
+
 ## 5.8.2
 > **Note:** the privacy manifest bundled with the SDK has been updated to match Apple's latest privacy policies. See the [App Store Privacy](#app-store-privacy-privacy-manifest) section for details.
 
