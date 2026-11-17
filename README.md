@@ -315,7 +315,7 @@ The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework.
 
 # Changelog
 ## 5.8.4
-- Fixed a rare session ID inconsistency issue.
+- Fixed a session ID inconsistency issue.
 
 ## 5.8.3
 - Fixed a rare hang and crash in geolocation data collection.
