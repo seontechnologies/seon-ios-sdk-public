@@ -314,6 +314,9 @@ The SDK ships a `PrivacyInfo.xcprivacy` privacy manifest inside the XCFramework.
 | System boot time | `35F9.1` | Computing perfomance metrics |
 
 # Changelog
+## 5.8.4
+- Fixed a session ID inconsistency issue.
+
 ## 5.8.3
 - Fixed a rare hang and crash in geolocation data collection.
 - Fixed a rare crash on iOS 27 caused by accessing UI state from a background thread.
